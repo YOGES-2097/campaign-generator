@@ -9,7 +9,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 st.title("AI Campaign Generator")
-st.write("Fill out the details below to generate a tailored campaign.")
+st.write("Fill out the details below to generate a campaign.")
 
 with st.form("campaign_builder"):
     st.subheader("Campaign Builder")
