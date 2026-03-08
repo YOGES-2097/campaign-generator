@@ -1,7 +1,7 @@
 import streamlit as st
 from google import genai
 
-#API_KEY = "AIzaSyBivc1qfXEj-448puvcis2tIM5Dc0CFK2w"
+API_KEY = ""  # Add your API key here
 
 st.set_page_config(page_title="AI Campaign Generator", layout="wide")
 
