@@ -1,6 +1,5 @@
 import streamlit as st
 from google import genai
-from key import TOKEN
 
 try:
     API_KEY = st.secrets["TOKEN"]
