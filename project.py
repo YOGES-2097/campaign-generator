@@ -4,6 +4,7 @@ from google import genai
 try:
     API_KEY = st.secrets["TOKEN"]
 except KeyError:
+    from key import TOKEN
     API_KEY = TOKEN
 
 st.set_page_config(page_title="AI Campaign Generator", layout="wide")
