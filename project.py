@@ -1,7 +1,8 @@
 import streamlit as st
 from google import genai
+from key import TOKEN
 
-API_KEY = "AIzaSyBivc1qfXEj-448puvcis2tIM5Dc0CFK2w"  # Add your API key here
+API_KEY = TOKEN
 
 st.set_page_config(page_title="AI Campaign Generator", layout="wide")
 
@@ -50,7 +51,7 @@ st.markdown("---")
 st.subheader("Campaign Feed")
 
 if not st.session_state.messages:
-    st.info("Your generated campaigns will appear here.")
+    st.info("Your campaigns will appear here.")
 else:
     for msg in reversed(st.session_state.messages): 
         if msg["role"] == "assistant":
@@ -58,15 +59,15 @@ else:
                 st.write(msg["content"])
         elif msg["role"] == "user":
             with st.chat_message("user"):
-                st.write(f"**Brief:** {msg['content']}")
+                st.write(f"*Brief:* {msg['content']}")
 
 st.sidebar.title("Campaign History")
 st.sidebar.write("Your recent requests in this session:")
 st.sidebar.markdown("---")
 
 if not st.session_state.messages:
-    st.sidebar.caption("No campaigns yet. Fill out the form!")
+    st.sidebar.caption("No campaigns. Fill out the form")
 else:
     for i, msg in enumerate(st.session_state.messages):
         if msg["role"] == "user":
-            st.sidebar.markdown(f"**Product:** {msg['product'][:25]}...")
+            st.sidebar.markdown(f"*Product:* {msg['product'][:25]}...")
