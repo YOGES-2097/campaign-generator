@@ -2,7 +2,11 @@ import streamlit as st
 from google import genai
 from key import TOKEN
 
-API_KEY = TOKEN
+try:
+    API_KEY = st.secrets["TOKEN"]
+# If that fails (because you are running it locally), use your key.py file
+except FileNotFoundError:
+    API_KEY = TOKEN
 
 st.set_page_config(page_title="AI Campaign Generator", layout="wide")
 
