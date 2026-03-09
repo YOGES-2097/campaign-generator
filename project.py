@@ -4,8 +4,7 @@ from key import TOKEN
 
 try:
     API_KEY = st.secrets["TOKEN"]
-# If that fails (because you are running it locally), use your key.py file
-except FileNotFoundError:
+except KeyError:
     API_KEY = TOKEN
 
 st.set_page_config(page_title="AI Campaign Generator", layout="wide")
