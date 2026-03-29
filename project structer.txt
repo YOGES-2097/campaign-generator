@@ -1,0 +1,17 @@
+project-1/
+│
+├── project.py               # The main engine. It routes users to login or the app.
+├── requirements.txt         # Your updated library recipe book.
+├── .gitignore               # Hides your local secrets.
+├── key.py                   # (Local only) Your fallback Google API key.
+│
+├── database/                # 🗄️ MILESTONE 1: MySQL & Authentication
+│   ├── db_connection.py     # Simply connects Streamlit to your Cloud MySQL.
+│   └── auth.py              # The logic for hashing passwords and verifying users.
+│
+├── ai_core/                 # 🧠 MILESTONE 2: LangChain & RAG
+│   ├── rag_pipeline.py      # Reads PDFs, creates embeddings, and talks to Gemini.
+│   └── prompts.py           # Stores your long f-strings and AI instructions.
+│
+└── user_data/               # 📁 Temporary storage for RAG documents
+    └── sample_brand.pdf     # A test document we will use to train the AI.
